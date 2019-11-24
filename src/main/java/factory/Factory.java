@@ -1,6 +1,7 @@
 package factory;
 
 import factory.samples.BMWFactory;
+import factory.samples.CarFactory;
 import factory.samples.WolswagenFactory;
 
 /**
@@ -20,5 +21,14 @@ public class Factory {
             System.out.println(car.getName() + " - " + car.getModel());
         });
 
+        showCars(bmwFactory);
+        showCars(wolswagenFactory);
+
+    }
+
+    private static void showCars(CarFactory carFactory) {
+        carFactory.getCars().stream().forEach(car -> {
+            System.out.println(car.getName() + " - " + car.getModel());
+        });
     }
 }
